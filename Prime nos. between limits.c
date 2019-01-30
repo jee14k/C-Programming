@@ -2,7 +2,7 @@
 #include<conio.h>
 main()
 {
-	int prime,ll,ul,i,j,n,count;
+	int prime,ll,ul,i,j;
 	printf("Programme to find the prime numbers between limits");
 	printf("\n ---------------------------------------------- \n");
 	printf("\n Enter the lower limit: \n");
@@ -14,16 +14,18 @@ main()
 	printf("\n ---------------------------------------------");
 	for(i=ll;i<=ul;i++)
 	{
-		n=i;
-		count=0;
-		for(j=1;j<=n;j++)
-		    if(n%j==0)
-			{
-				count++;
-			}
-	     if(count==2)
+		prime=1;
+		for(j=2;j<i/2;j++)
 		{
-			printf("\n %d",n);
+			if(i%j==0)
+			{
+				prime=0;
+				break;
+			}
+		}
+		if(prime==1)
+		{
+			printf("\n %d",i);
 		}
 	}
 	printf("\n ---------------------------------------------- \n");
